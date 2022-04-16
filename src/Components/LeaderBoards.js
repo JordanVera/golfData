@@ -5,9 +5,7 @@ const Leaderboard = (props) => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    console.log('Mounted');
-
-    fetch('/players')
+    fetch('/getPlayers')
       .then((res) => res.json())
       .then((leaderboard) =>
         setPlayers(leaderboard, (_) => {
@@ -21,7 +19,7 @@ const Leaderboard = (props) => {
 
   return (
     <>
-      <h2 className="text-center">Leaderboards</h2>
+      <h2 className="text-center my-3">Leaderboards</h2>
       <LeaderBoardTable players={players} />
     </>
   );

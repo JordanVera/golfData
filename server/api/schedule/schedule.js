@@ -14,12 +14,12 @@ export const seedSchedule = async (req, res) => {
       .then(async (response) => {
         const client = new MongoClient(process.env.MONGODB_URI);
         await client.connect();
-        const events = client.db('golf').collection('tournaments');
+        const events = client.db('tournaments').collection('events');
 
         try {
           const schedule = response.data.schedule;
 
-          await client.db('golf').dropDatabase();
+          await client.db('tournaments').dropDatabase();
 
           schedule.forEach(async (event) => {
             await events.insertOne({
@@ -34,13 +34,14 @@ export const seedSchedule = async (req, res) => {
             });
           });
 
-          console.log(
-            chalk.green({
-              msg: 'Succesfully retrieved tournament and event data from datagolf API.',
-            })
-          );
+          console.log(schedule);
+          // console.log(
+          //   chalk.green({
+          //     msg: 'Succesfully retrieved tournament and event data from datagolf API.',
+          //   })
+          // );
         } catch (error) {
-          console.log(chalk.redBright(error.message));
+          console.log(chalk.redBright(error));
         }
       });
   } catch (error) {

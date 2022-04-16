@@ -35,10 +35,11 @@ export const seedPlayers = async (req, res) => {
           return player;
         });
 
-        console.log({
-          msg: 'Successfully retrieved player data and strokes gained data from DATAGOLF API',
-        });
-        return res.json(answer);
+        const ret = {
+          msg: 'Successfully retrieved player data and strokes gained data from DATAGOLF API and Seeded DB',
+        };
+        console.log(ret);
+        return res.json(ret);
       })
     );
   } catch (err) {
@@ -51,12 +52,33 @@ export const getPlayers = async (req, res) => {
   const client = new MongoClient(process.env.MONGODB_URI);
   await client.connect();
   client
-    .db('golfers')
+    .db('golf')
     .collection('golfers')
     .find({})
     .toArray(function (err, result) {
       if (err) throw err;
-      console.log({ msg: 'Successfully retreived all Golfers from MONGODB.' });
-      return res.json(result);
+
+      const sortedByRanking = result.sort((x, y) => {
+        return x.owgr_rank > y.owgr_rank ? 1 : -1;
+      });
+      // console.log(sortedByRanking);
+      return res.json(sortedByRanking);
+    });
+};
+
+export const getPlayer = async (req, res) => {
+  const playerId = req.params.playerId;
+  const client = new MongoClient(process.env.MONGODB_URI);
+  await client.connect();
+  client
+    .db('golf')
+    .collection('golfers')
+    .findOne({ dg_id: parseFloat(playerId) }, (err, player) => {
+      if (err) throw err;
+
+      console.log({
+        msg: `Succesfully retreived playerdata with ID of ${playerId} from MONGODB`,
+      });
+      return res.json(player);
     });
 };
