@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "nodemon index.js --ignore start",
+    "server": "nodemon index.js",
     "dev": "concurrently \"npm run server\" \"npm run start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",

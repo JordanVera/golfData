@@ -39,7 +39,13 @@ const LeaderBoardTable = ({ players }) => {
             return (
               <tr className={_rowClassName} key={i}>
                 <td>{player.owgr_rank}</td>
-                <td>{player.player_name.split(',').reverse('').join(' ')}</td>
+                <td>
+                  <img
+                    src={`images/flags/${player.country}.png`}
+                    alt={`${player.country} flag`}
+                  />
+                  {player.player_name.split(',').reverse('').join(' ')}
+                </td>
                 <td>{player.stats.sg_app}</td>
                 <td>{player.stats.sg_arg}</td>
                 <td>{player.stats.sg_ott}</td>
