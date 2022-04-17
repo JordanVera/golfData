@@ -61,7 +61,9 @@ export const getPlayers = async (req, res) => {
       const sortedByRanking = result.sort((x, y) => {
         return x.owgr_rank > y.owgr_rank ? 1 : -1;
       });
-      // console.log(sortedByRanking);
+      console.log({
+        msg: `Succesfully retreived players from MONGODB`,
+      });
       return res.json(sortedByRanking);
     });
 };
