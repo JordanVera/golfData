@@ -5,17 +5,19 @@ import LiveOdds from './Components/LiveOdds.js';
 
 function App() {
   return (
-    <Container>
+    <>
       <Header />
-      <Row>
-        <Col md={8}>
-          <LeaderBoards />
-        </Col>
-        <Col md={4}>
-          <LiveOdds />
-        </Col>
-      </Row>
-    </Container>
+      <Container>
+        <Row>
+          <Col md={8}>
+            <LeaderBoards />
+          </Col>
+          <Col md={4}>
+            <LiveOdds />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }
 

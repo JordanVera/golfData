@@ -26,3 +26,28 @@ code {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
+.draftKingsLogo {
+  width: 68px;
+}
+
+.navbar {
+  border: none;
+  background: #62c462;
+}
+
+.navbar .nav-link {
+  border: none;
+  color: #fff !important;
+  font-size: 20px;
+  margin: auto 4px;
+}
+
+.navbar .nav-link:focus, .navbar .nav-link:hover {
+  background: none;
+  border: none;
+}
+
+.navbar-brand {
+  border: none;
+}

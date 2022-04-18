@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
           <Navbar.Brand href="/">
             <img
               alt=""
-              src="/images/logo.png"
+              src="/images/logoWhite.png"
               width="60"
               height="60"
               className="d-inline-block align-top"
@@ -16,8 +16,8 @@ const Header = () => {
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#features"> Features</Nav.Link>
+            <Nav.Link href="#pricing"> Pricing</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

@@ -18,7 +18,7 @@ const LiveOdds = (props) => {
 
   return (
     <>
-      <h2 className="text-center my-3">Fanduel Live Odds</h2>
+      <h2 className="text-center my-3">Draft Kings Live Odds</h2>
       <LiveOddsCard event={event} loading={loading} />
     </>
   );

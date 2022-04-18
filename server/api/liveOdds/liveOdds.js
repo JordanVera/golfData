@@ -11,8 +11,8 @@ const getLiveOdds = async (req, res) => {
     )
     .then(async (oddsData) => {
       try {
-        console.log({ msg: 'live odds data retrieved from datagolf API' });
         const d = oddsData.data;
+        console.log({ msg: 'live odds data retrieved from datagolf API' });
         return res.json(d);
       } catch (err) {
         console.log({ err: err.message });

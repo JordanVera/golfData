@@ -57,10 +57,13 @@ export const getPlayers = async (req, res) => {
     .find({})
     .toArray(function (err, result) {
       if (err) throw err;
-
-      const sortedByRanking = result.sort((x, y) => {
-        return x.owgr_rank > y.owgr_rank ? 1 : -1;
-      });
+      const sortedByRanking = result
+        .filter((player) => {
+          if (player.owgr_rank <= 500) return player;
+        })
+        .sort((x, y) => {
+          return x.owgr_rank > y.owgr_rank ? 1 : -1;
+        });
       console.log({
         msg: `Succesfully retreived players from MONGODB`,
       });
