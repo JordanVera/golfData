@@ -8,6 +8,7 @@ import { seedSchedule, getSchedule } from './api/schedule/schedule.js';
 import liveStrokesGainedData from './api/liveStrokesGained/liveStrokesGained.js';
 import getScorecard from './api/scorecard/scorecardController.js';
 import getPlayerStatisticsBySeason from './api/seasonAverages/seasonAveragesController.js';
+import getLiveOdds from './api/liveOdds/liveOdds.js';
 const app = express();
 
 app.get('/seedPlayers', seedPlayers);
@@ -22,5 +23,7 @@ app.get('/strokesGained', liveStrokesGainedData);
 app.get('/scorecard/:tournamentId/:playerId', getScorecard);
 
 app.get('/seasonAverages/:playerId', getPlayerStatisticsBySeason);
+
+app.get('/liveOdds', getLiveOdds);
 
 export default app;

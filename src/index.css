@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.sm-txt {
+  font-size: 12px;
+}
+
+
+.spinner {
+  position: absolute;
+  margin: auto;
+  display: block;
+  bottom: 0px;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

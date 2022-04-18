@@ -1,12 +1,20 @@
-import { Container } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 import Header from './Components/Header.js';
 import LeaderBoards from './Components/LeaderBoards.js';
+import LiveOdds from './Components/LiveOdds.js';
 
 function App() {
   return (
     <Container>
       <Header />
-      <LeaderBoards />
+      <Row>
+        <Col md={8}>
+          <LeaderBoards />
+        </Col>
+        <Col md={4}>
+          <LiveOdds />
+        </Col>
+      </Row>
     </Container>
   );
 }
