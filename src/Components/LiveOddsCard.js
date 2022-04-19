@@ -4,7 +4,9 @@ import { Card, Table, Row, Col } from 'react-bootstrap';
 import SpinnerCustom from './Spinner.js';
 
 export default function LiveOddsCard({ event, loading }) {
-  return (
+  return loading ? (
+    <SpinnerCustom />
+  ) : (
     <Card>
       <Card.Header>
         <Row>
@@ -33,18 +35,14 @@ export default function LiveOddsCard({ event, loading }) {
             </tr>
           </thead>
           <tbody>
-            {loading ? (
-              <SpinnerCustom />
-            ) : (
-              event.odds.map((player) => {
-                return (
-                  <tr tr className="text-center" key={player.dg_id}>
-                    <td>{player.player_name}</td>
-                    <td>{player.draftkings}</td>
-                  </tr>
-                );
-              })
-            )}
+            {event.odds.map((player) => {
+              return (
+                <tr tr className="text-center" key={player.dg_id}>
+                  <td>{player.player_name}</td>
+                  <td>{player.draftkings}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
         <Card.Text className="text-center">

@@ -90,7 +90,9 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
       console.log(`page deafult set to 100}`);
     });
   }, []);
-  return (
+  return loading ? (
+    <SpinnerCustom />
+  ) : (
     <>
       <Table {...getTableProps()}>
         <thead>
@@ -113,28 +115,24 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
         </thead>
 
         <tbody {...getTableBodyProps()}>
-          {loading ? (
-            <SpinnerCustom />
-          ) : (
-            page.map((row, index) => {
-              const rowClassName = classNames('tableRow text-center', {
-                'table-dark': index % 2 === 1,
-                'table-primary': index % 2 === 0,
-              });
+          {page.map((row, index) => {
+            const rowClassName = classNames('tableRow text-center', {
+              'table-dark': index % 2 === 1,
+              'table-primary': index % 2 === 0,
+            });
 
-              prepareRow(row);
+            prepareRow(row);
 
-              return (
-                <tr {...row.getRowProps()} className={rowClassName}>
-                  {row.cells.map((cell) => {
-                    return (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                    );
-                  })}
-                </tr>
-              );
-            })
-          )}
+            return (
+              <tr {...row.getRowProps()} className={rowClassName}>
+                {row.cells.map((cell) => {
+                  return (
+                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
       <div className="pagination">
@@ -176,18 +174,6 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
             {pageIndex + 1} of {pageOptions.length}
           </strong>{' '}
         </span>
-        <span>
-          | Go to page:{' '}
-          <input
-            type="number"
-            defaultValue={pageIndex + 1}
-            onChange={(e) => {
-              const page = e.target.value ? Number(e.target.value) - 1 : 0;
-              gotoPage(page);
-            }}
-            style={{ width: '100px' }}
-          />
-        </span>{' '}
         <select
           value={pageSize}
           defaultPageSize={100}
