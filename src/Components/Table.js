@@ -1,12 +1,10 @@
-import React from 'react';
-import { Table, Button, Spinner } from 'react-bootstrap';
-import { useTable, useSortBy } from 'react-table';
+import React, { useEffect } from 'react';
+import { Table, Button, Image } from 'react-bootstrap';
+import { useTable, useSortBy, usePagination } from 'react-table';
 import classNames from 'classnames';
 import SpinnerCustom from './Spinner.js';
 
 export default function TableMain({ players, setSelectedPlayer, loading }) {
-  // const [selectedPlayer, setSelectedPlayer] = React.useState(null);
-  // console.log({ selectedPlayer });
   const columns = React.useMemo(
     () => [
       {
@@ -16,6 +14,15 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
       {
         Header: 'Name',
         accessor: 'player_name',
+        Cell: (props) => (
+          <>
+            <Image
+              src={`/images/flags/${props.cell.row.original.country}.png`}
+              className="countryFlag"
+            />{' '}
+            {props.cell.row.original.player_name.split(',').reverse().join(' ')}
+          </>
+        ),
       },
       {
         Header: 'SG APP',
@@ -40,6 +47,7 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
       {
         Header: 'Skill Estimate',
         accessor: 'dg_skill_estimate',
+        Cell: (props) => props.cell.row.original.dg_skill_estimate.toFixed(3),
       },
       {
         Header: 'Stats',
@@ -60,50 +68,140 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
 
   const data = React.useMemo(() => [...players], [players]);
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data }, useSortBy);
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    prepareRow,
+    page,
+    canPreviousPage,
+    canNextPage,
+    pageOptions,
+    pageCount,
+    gotoPage,
+    nextPage,
+    previousPage,
+    setPageSize,
+    state: { pageIndex, pageSize },
+  } = useTable({ columns, data }, useSortBy, usePagination);
 
+  useEffect(() => {
+    setPageSize(100, (_) => {
+      console.log(`page deafult set to 100}`);
+    });
+  }, []);
   return (
-    <Table {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr className="text-center" {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                {column.render('Header')}
-                <span>
-                  {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
-                </span>
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
+    <>
+      <Table {...getTableProps()}>
+        <thead>
+          {headerGroups.map((headerGroup) => (
+            <tr className="text-center" {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render('Header')}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? ' 🔽'
+                        : ' 🔼'
+                      : ''}
+                  </span>
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
 
-      <tbody {...getTableBodyProps()}>
-        {loading ? (
-          <SpinnerCustom />
-        ) : (
-          rows.map((row, index) => {
-            const rowClassName = classNames('tableRow text-center', {
-              'table-dark': index % 2 === 1,
-              'table-primary': index % 2 === 0,
-            });
+        <tbody {...getTableBodyProps()}>
+          {loading ? (
+            <SpinnerCustom />
+          ) : (
+            page.map((row, index) => {
+              const rowClassName = classNames('tableRow text-center', {
+                'table-dark': index % 2 === 1,
+                'table-primary': index % 2 === 0,
+              });
 
-            prepareRow(row);
+              prepareRow(row);
 
-            return (
-              <tr {...row.getRowProps()} className={rowClassName}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                  );
-                })}
-              </tr>
-            );
-          })
-        )}
-      </tbody>
-    </Table>
+              return (
+                <tr {...row.getRowProps()} className={rowClassName}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                    );
+                  })}
+                </tr>
+              );
+            })
+          )}
+        </tbody>
+      </Table>
+      <div className="pagination">
+        <Button
+          variant="success"
+          size="sm"
+          onClick={() => gotoPage(0)}
+          disabled={!canPreviousPage}
+        >
+          {'<<'}
+        </Button>{' '}
+        <Button
+          variant="success"
+          size="sm"
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+        >
+          {'<'}
+        </Button>{' '}
+        <Button
+          variant="success"
+          size="sm"
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+        >
+          {'>'}
+        </Button>{' '}
+        <Button
+          variant="success"
+          size="sm"
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+        >
+          {'>>'}
+        </Button>{' '}
+        <span>
+          Page{' '}
+          <strong>
+            {pageIndex + 1} of {pageOptions.length}
+          </strong>{' '}
+        </span>
+        <span>
+          | Go to page:{' '}
+          <input
+            type="number"
+            defaultValue={pageIndex + 1}
+            onChange={(e) => {
+              const page = e.target.value ? Number(e.target.value) - 1 : 0;
+              gotoPage(page);
+            }}
+            style={{ width: '100px' }}
+          />
+        </span>{' '}
+        <select
+          value={pageSize}
+          defaultPageSize={100}
+          onChange={(e) => {
+            setPageSize(Number(e.target.value));
+          }}
+        >
+          {[25, 50, 100, 500].map((pageSize) => (
+            <option key={pageSize} value={pageSize}>
+              Show {pageSize}
+            </option>
+          ))}
+        </select>
+      </div>
+    </>
   );
 }

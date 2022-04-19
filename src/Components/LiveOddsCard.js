@@ -1,4 +1,5 @@
 import React from 'react';
+import { format } from 'date-fns';
 import { Card, Table, Row, Col } from 'react-bootstrap';
 import SpinnerCustom from './Spinner.js';
 
@@ -21,6 +22,9 @@ export default function LiveOddsCard({ event, loading }) {
         </Row>
       </Card.Header>
       <Card.Body>
+        <Card.Subtitle className="mb-2 text-center pb-2">
+          TO WIN EVENT
+        </Card.Subtitle>
         <Table striped bordered variant="dark">
           <thead>
             <tr className="text-center">

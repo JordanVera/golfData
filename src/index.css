@@ -51,3 +51,11 @@ code {
 .navbar-brand {
   border: none;
 }
+
+.countryFlag {
+  padding-right: 4px;
+}
+
+.pagination button {
+ margin: 0 8px
+}
