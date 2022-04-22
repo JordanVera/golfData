@@ -62,8 +62,8 @@ export default function LiveOddsCard({ event, loading }) {
             />
           </Col>
           <Col sm={9} className="text-center">
-            <Card.Title className="text-danger">
-              <h4>{event.event_name}</h4>
+            <Card.Title>
+              <h4 className="white">{event.event_name}</h4>
             </Card.Title>
             <Card.Subtitle className="mb-2 text-success">
               Last Updated: {event.last_updated}
