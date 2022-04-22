@@ -23,7 +23,6 @@ const Leaderboard = (props) => {
 
   return (
     <>
-      <h2 className="text-center my-3">Leaderboards</h2>
       <TableMain
         players={players}
         loading={loading}

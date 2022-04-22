@@ -9,19 +9,12 @@ const LiveOdds = (props) => {
     fetch('/liveOdds')
       .then((res) => res.json())
       .then((json) => {
-        setEvent(json, (_) => {
-          console.log(`Live Odds Fetched: ${JSON.stringify(json)}`, json);
-        });
+        setEvent(json);
         setLoading(false);
       });
   }, []);
 
-  return (
-    <>
-      <h2 className="text-center my-3">Draft Kings Live Odds</h2>
-      <LiveOddsCard event={event} loading={loading} />
-    </>
-  );
+  return <LiveOddsCard event={event} loading={loading} />;
 };
 
 export default LiveOdds;

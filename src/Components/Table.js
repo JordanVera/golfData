@@ -94,7 +94,7 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
     <SpinnerCustom />
   ) : (
     <>
-      <Table {...getTableProps()}>
+      <Table {...getTableProps()} className="my-4">
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr className="text-center" {...headerGroup.getHeaderGroupProps()}>
@@ -136,6 +136,7 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
         </tbody>
       </Table>
       <div className="pagination">
+        <div className="center"></div>
         <Button
           variant="success"
           size="sm"
@@ -168,15 +169,14 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
         >
           {'>>'}
         </Button>{' '}
-        <span>
+        <div className="pageCounter">
           Page{' '}
           <strong>
             {pageIndex + 1} of {pageOptions.length}
           </strong>{' '}
-        </span>
+        </div>
         <select
           value={pageSize}
-          defaultPageSize={100}
           onChange={(e) => {
             setPageSize(Number(e.target.value));
           }}

@@ -2,8 +2,6 @@ import { Modal, Row, Col } from 'react-bootstrap';
 import PlayerRadarChart from './PlayerRadarChart.js';
 
 const PlayerModal = ({ player, handleClose }) => {
-  const { stats } = player;
-
   return (
     <Modal show={true} onHide={handleClose} centered>
       <Modal.Header closeButton>
