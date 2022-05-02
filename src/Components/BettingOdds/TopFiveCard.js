@@ -12,7 +12,10 @@ export default function TopFiveCard({ event, loading }) {
     const ary = [];
     event.odds.forEach((odd) => {
       if (odd.draftkings)
-        ary.push({ odds: odd.draftkings, player_name: odd.player_name });
+        ary.push({
+          odds: odd.draftkings,
+          player_name: odd.player_name.split(',').reverse().join(' '),
+        });
     });
     return ary;
   }, [event.odds]);

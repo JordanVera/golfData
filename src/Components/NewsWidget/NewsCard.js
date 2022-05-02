@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Row, Col, Button } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 import SpinnerCustom from '../Spinner.js';
 
 export default function NewsCard({ news, loading }) {

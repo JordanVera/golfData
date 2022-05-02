@@ -94,7 +94,7 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
     <SpinnerCustom />
   ) : (
     <>
-      <Table {...getTableProps()} className="my-4">
+      <Table responsive {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr className="text-center" {...headerGroup.getHeaderGroupProps()}>

@@ -1,7 +1,4 @@
 import axios from 'axios';
-import chalk from 'chalk';
-import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
 
 const liveStrokesGainedData = async (req, res) => {
   try {

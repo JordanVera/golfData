@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import NewsCard from './NewsCard.js';
-import { Carousel } from 'react-bootstrap';
 
 const NewsWidget = (props) => {
   const [news, setNews] = useState({});

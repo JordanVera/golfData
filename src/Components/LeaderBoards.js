@@ -22,7 +22,8 @@ const Leaderboard = (props) => {
   }, []);
 
   return (
-    <>
+    <div className="leaderboard">
+      <h3 className="text-center">Leaderboard</h3>
       <TableMain
         players={players}
         loading={loading}
@@ -35,7 +36,7 @@ const Leaderboard = (props) => {
           handleClose={() => setSelectedPlayer(null)}
         />
       )}
-    </>
+    </div>
   );
 };
 

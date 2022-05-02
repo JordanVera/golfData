@@ -39,6 +39,10 @@ a {
   margin-top: 250px;
 }
 
+.leaderboard {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
 
 .draftKingsLogo {
   width: 68px;
@@ -46,7 +50,7 @@ a {
 
 .navbar {
   border: none;
-  background: #62c462;
+  background: #62c462 !important;
 }
 
 .navbar .nav-link {
@@ -107,11 +111,9 @@ a {
   padding: 0;
 
 }
-/* 
-.carousel-control-next,
-.carousel-control-prev {
-  display: none !important;
-} */
 
-
-
+@media only screen and (max-width : 768px) {
+  .nav-link {
+    text-align: center;
+  }
+}
