@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import router from './server/index.js';
 import express from 'express';
 import bodyparser from 'body-parser';
+import morgan from 'morgan';
+import cors from 'cors';
 
 const app = express();
 
@@ -18,7 +20,11 @@ app.use(
   })
 );
 
+app.use(morgan('tiny'));
+
 app.use(bodyparser.json());
+
+app.use(cors());
 
 mongoose
   .connect(db, {

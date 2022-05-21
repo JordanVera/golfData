@@ -1,3 +1,17 @@
+:root{
+  --green: #62c462;
+  --white: #f2f2f2;
+  --lightBlue: #2a9fd6;
+  --orange: #F29006;
+  --orange2: #ff6e40;
+  --grey: #272B30;
+  --lightGrey: #515960;
+  --black: #000;
+  --black-base: rgb(40,40,40);
+  --container-border-base: 1px solid rgb(65, 65, 65);
+  --font-color-base: rgba(240, 240, 240, .65)
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,15 +27,37 @@ code {
 }
 
 a {
-  text-decoration-color: #2a9fd6;
+  text-decoration-color: var(--lightBlue);
 }
 
 .blue {
-  color: #2a9fd6;
+  color: var(--lightBlue) !important;
+}
+
+.green {
+  color: var(--green) !important;
 }
 
 .white {
-  color: #f2f2f2 !important;
+  color: var(--white) !important;
+}
+
+.orange {
+  color: var(--orange) !important;
+}
+
+.bg-black-base {
+  background: var(--black-base) !important;
+  height: 100%;
+}
+
+.playerProfileCard{
+  border: none !important;
+  margin-bottom: 24px;
+}
+
+.submitButton {
+  width: 100%;
 }
 
 .sm-txt {
@@ -50,12 +86,12 @@ a {
 
 .navbar {
   border: none;
-  background: #62c462 !important;
+  background: var(--green) !important;
 }
 
 .navbar .nav-link {
   border: none;
-  color: #fff !important;
+  color: var(--white) !important;
   font-size: 20px;
   margin: auto 4px;
 }
@@ -88,16 +124,6 @@ a {
   margin: 24px 0;
 }
 
-/* .imgOverlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  z-index: 5
-} */
-
-
-
 .imgOverlay {
   padding: 100px 24px;
   margin-top: -40px;
@@ -109,7 +135,93 @@ a {
   left: 0;
   top: 0;
   padding: 0;
+}
 
+#footer {
+  background: var(--green) !important;
+  color: var(--white) !important;
+}
+
+#contactForm {
+  width: 100%;
+  margin: 24px 0;
+  padding: 12px;
+  background: var(--lightGrey);
+}
+
+.searchInputs {
+  display: flex;
+}
+
+.search input {
+  height: 25px;
+  width: 215px;
+  font-size: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--font-color-base);
+  padding-left: 5px;
+  box-shadow: none !important;
+  border: var(--container-border-base);
+  border-radius: 1px;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: var(--black-base);
+  font-weight: normal !important;
+}
+
+input:focus {
+  outline: none;
+}
+
+.dataResult {
+  margin-left: 26px;
+  margin-top: 5px;
+  width: 215px;
+  height: 200px;
+  background-color: var(--black-base);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none !important;
+}
+
+.dataResult .dataItem {
+  margin: 10px 0;
+  width: 215px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background-color: var(--black-base);
+  color: var(--font-color-base);
+}
+
+.dataItem p {
+  margin-left: 10px;
+  margin-bottom: 0 !important;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--green) !important;
+}
+
+#clearBtn {
+  cursor: pointer;
+}
+
+.searchIcon {
+  background: #424242;
+  padding: 0 6px;
 }
 
 @media only screen and (max-width : 768px) {

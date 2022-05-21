@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TableMain from './Table.js';
 import PlayerModal from './PlayerModal.js';
+import Searchbar from './Searchbar/Searchbar.js';
 
 const Leaderboard = (props) => {
   const [players, setPlayers] = useState([]);
@@ -23,6 +24,7 @@ const Leaderboard = (props) => {
 
   return (
     <div className="leaderboard">
+      <Searchbar placeholder="Search Players.." data={players} />
       <h3 className="text-center">Leaderboard</h3>
       <TableMain
         players={players}

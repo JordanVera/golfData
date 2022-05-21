@@ -10,6 +10,7 @@ import getScorecard from './api/scorecard/scorecardController.js';
 import getPlayerStatisticsBySeason from './api/seasonAverages/seasonAveragesController.js';
 import getRecentNews from './api/news/news.js';
 import { getLiveOdds, getTopFive, getTopTen } from './api/liveOdds/liveOdds.js';
+import postSubmitForm from './api/submitForm/submitFormController.js';
 const app = express();
 
 app.get('/seedPlayers', seedPlayers);
@@ -30,5 +31,7 @@ app.get('/top_5', getTopFive);
 app.get('/top_10', getTopTen);
 
 app.get('/recentNews', getRecentNews);
+
+app.post('/submitForm', postSubmitForm);
 
 export default app;

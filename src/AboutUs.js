@@ -1,6 +1,7 @@
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Header from './Components/Header.js';
 import AboutUsPage from './Components/AboutUsPage/AboutUsPage.js';
+import Footer from './Components/Footer.js';
 
 function AboutUs() {
   return (
@@ -9,6 +10,7 @@ function AboutUs() {
       <Container>
         <AboutUsPage />
       </Container>
+      <Footer />
     </>
   );
 }

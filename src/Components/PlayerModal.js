@@ -5,16 +5,18 @@ const PlayerModal = ({ player, handleClose }) => {
   return (
     <Modal show={true} onHide={handleClose} centered>
       <Modal.Header closeButton>
-        <Modal.Title>
+        <Modal.Title className="animate__animated animate__fadeIn">
           {player.player_name.split(',').reverse('').join(' ')}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Row>
-          <h4 className="my-3 text-center">Skill Profile Breakdown</h4>
+          <h4 className="my-3 text-center animate__animated animate__fadeIn">
+            Skill Profile Breakdown
+          </h4>
           <PlayerRadarChart player={player} />
         </Row>
-        <Row className="text-center">
+        <Row className="text-center animate__animated animate__fadeIn">
           <Col md={4}>
             <p>
               <strong>Country</strong>
@@ -39,7 +41,7 @@ const PlayerModal = ({ player, handleClose }) => {
             <p>{player.dg_skill_estimate.toFixed(3)}</p>
           </Col>
         </Row>
-        <Row>
+        <Row className="animate__animated animate__fadeIn">
           <p className="sm-txt">
             Our skill profiles, displayed as radar plots, show the number of
             standard deviations better or worse a player is in each skill

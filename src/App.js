@@ -2,6 +2,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import Header from './Components/Header.js';
 import LeaderBoards from './Components/LeaderBoards.js';
 import Sidebar from './Components/Sidebar.js';
+import Footer from './Components/Footer.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 }
