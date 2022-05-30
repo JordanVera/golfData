@@ -64,7 +64,7 @@ const Header = () => {
                 </Col>
                 <Col xs={4}>
                   <Nav.Link
-                    href="mailto:verawebdevelopment@gmail.com"
+                    href="mailto:verawebdev@protonmail.com"
                     target="_blank"
                   >
                     <svg

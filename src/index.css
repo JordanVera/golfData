@@ -46,9 +46,20 @@ a {
   color: var(--orange) !important;
 }
 
+.bg-light-grey {
+  background: var(--lightGrey) !important;
+}
+
+.bg-green {
+  background: var(--green) !important;
+}
+
 .bg-black-base {
   background: var(--black-base) !important;
-  height: 100%;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .playerProfileCard{
@@ -137,6 +148,10 @@ a {
   padding: 0;
 }
 
+#leaderboardTable {
+  margin-top: 24px;
+}
+
 #footer {
   background: var(--green) !important;
   color: var(--white) !important;
@@ -155,7 +170,7 @@ a {
 
 .search input {
   height: 25px;
-  width: 215px;
+  width: 100%;
   font-size: 12px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -178,9 +193,8 @@ input:focus {
 }
 
 .dataResult {
-  margin-left: 26px;
   margin-top: 5px;
-  width: 215px;
+  width: 100%;
   height: 200px;
   background-color: var(--black-base);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -222,6 +236,64 @@ a:hover {
 .searchIcon {
   background: #424242;
   padding: 0 6px;
+}
+
+.liveScoring {
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.liveScoring::-webkit-scrollbar {
+  display: none;
+}
+
+.holeNumber {
+  padding-top: 44px !important;
+  /* border: 1px solid var(--green); */
+  background: var(--green);
+}
+
+.holeNumber p {
+  font-weight: 600;
+  font-size: 14px !important;
+}
+
+.holeStats {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+.holeNumber, .holeStats {
+  padding: 15px 12px;
+  vertical-align: top; 
+  height: 100%;
+}
+
+.liveScoring p {
+  font-size: 12px;
+  margin-bottom: 4px ;
+  color: var(--white);
+}
+
+.liveScoringTitle {
+  font-size: 14px;
+  margin: 2px 0;
+  color: var(--white);
+}
+
+.liveScoringOuter {
+  background-color: var(--black-base);
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.updateTitle {
+  font-size: 12px;
+  margin: 2px 0;
+  color: var(--white);
 }
 
 @media only screen and (max-width : 768px) {

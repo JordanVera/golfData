@@ -25,7 +25,6 @@ const Leaderboard = (props) => {
   return (
     <div className="leaderboard">
       <Searchbar placeholder="Search Players.." data={players} />
-      <h3 className="text-center">Leaderboard</h3>
       <TableMain
         players={players}
         loading={loading}

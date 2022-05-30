@@ -31,7 +31,6 @@ export default function PlayerProfilePage({ player, loading }) {
               </Card.Subtitle>
             </Card.Body>
           </Card>
-          0
         </Col>
         <Col md={4}>
           <Card className="playerProfileCard bg-black-base">

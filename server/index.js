@@ -20,7 +20,7 @@ app.get('/getPlayer/:playerId', getPlayer);
 app.get('/seedSchedule', seedSchedule);
 app.get('/getSchedule', getSchedule);
 
-app.get('/strokesGained', liveStrokesGainedData);
+app.get('/scoringDistribution', liveStrokesGainedData);
 
 app.get('/scorecard/:tournamentId/:playerId', getScorecard);
 
