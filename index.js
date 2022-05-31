@@ -27,6 +27,8 @@ app.use(bodyparser.json());
 
 app.use(cors());
 
+app.use('/', router);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.resolve(__dirname, './build')));
 }
@@ -43,5 +45,3 @@ mongoose
     });
   })
   .catch((err) => console.log(err.message));
-
-app.use('/', router);
