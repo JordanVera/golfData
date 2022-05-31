@@ -43,7 +43,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node index.js",
     "server": "nodemon index.js",
     "dev": "concurrently \"npm run server\" \"npm run start\"",
     "build": "react-scripts build",
