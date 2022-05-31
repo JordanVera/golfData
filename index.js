@@ -6,6 +6,7 @@ import express from 'express';
 import bodyparser from 'body-parser';
 import morgan from 'morgan';
 import cors from 'cors';
+import path from 'path';
 
 const app = express();
 
@@ -25,6 +26,10 @@ app.use(morgan('tiny'));
 app.use(bodyparser.json());
 
 app.use(cors());
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.resolve(__dirname, './build')));
+}
 
 mongoose
   .connect(db, {
