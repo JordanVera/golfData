@@ -30,7 +30,7 @@ app.use(cors());
 app.use('/', router);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname, './build')));
+  app.use(express.static('./build'));
 }
 
 mongoose
