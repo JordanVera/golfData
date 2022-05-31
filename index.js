@@ -13,7 +13,7 @@ const app = express();
 dotenv.config();
 
 const db = process.env.MONGODB_URI;
-const port = 5555;
+const port = process.env.PORT || 5555;
 
 app.use(
   bodyparser.urlencoded({
