@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TableMain from './Table.js';
 import PlayerModal from './PlayerModal.js';
 import Searchbar from './Searchbar/Searchbar.js';
+import { url } from '../config.js';
 
 const Leaderboard = (props) => {
   const [players, setPlayers] = useState([]);
@@ -9,7 +10,7 @@ const Leaderboard = (props) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/getPlayers')
+    fetch(`${url}/getPlayers`)
       .then((res) => res.json())
       .then((leaderboard) => {
         setPlayers(leaderboard, (_) => {

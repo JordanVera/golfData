@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import StrokesGainedData from './StrokesGainedData.js';
+import { url } from '../config.js';
 
 const StrokesGained = (props) => {
   const [strokesGained, setStrokesGained] = useState([]);
 
   useEffect(() => {
-    fetch('/strokesGained')
+    fetch(`${url}/strokesGained`)
       .then((res) => res.json())
       .then((json) =>
         setStrokesGained(json, (_) => {

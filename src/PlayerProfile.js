@@ -3,7 +3,8 @@ import { Container } from 'react-bootstrap';
 import Header from './Components/Header.js';
 import Footer from './Components/Footer.js';
 import PlayerProfilePage from './Components/PlayerProfile/PlayerProfilePage.js';
-import { useParams } from 'react-router-dom';
+import { useParams, useResolvedPath } from 'react-router-dom';
+import { url } from './config.js';
 
 const PlayerProfile = ({}) => {
   const params = useParams();
@@ -12,7 +13,7 @@ const PlayerProfile = ({}) => {
   console.log('params >>>', params);
 
   useEffect(() => {
-    fetch(`http://localhost:5555/getPlayer/${params.playerId}`)
+    fetch(`${url}/getPlayer/${params.playerId}`)
       .then((res) => res.json())
       .then((player) => {
         console.log('player >>>', player);

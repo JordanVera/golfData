@@ -27,12 +27,12 @@ const postSubmitForm = (req, res) => {
     })
     .then((resp) => {
       console.log('msg sent succesfully');
+      res.json({ success: true });
     })
     .catch((err) => {
       console.log(err);
+      res.json({ success: false });
     });
-
-  return res.redirect('contactedUs');
 };
 
 export default postSubmitForm;

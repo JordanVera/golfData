@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import LiveOddsCard from './LiveOddsCard.js';
+import { url } from '../../config.js';
 
 const LiveOdds = (props) => {
   const [event, setEvent] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/liveOdds')
+    fetch(`${url}/liveOdds`)
       .then((res) => res.json())
       .then((json) => {
         setEvent(json);

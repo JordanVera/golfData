@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LiveScoringDistribution from './ScoringDistribution.js';
+import { url } from '../../config.js';
 
 export default function ScoringDistributionState() {
   const [currentRoundStats, setCurrentRoundStats] = useState({});
@@ -8,7 +9,7 @@ export default function ScoringDistributionState() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/scoringDistribution')
+    fetch(`${url}/scoringDistribution`)
       .then((res) => res.json())
       .then((tournamentData) => {
         setCurrentRoundStats(
