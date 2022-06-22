@@ -242,7 +242,6 @@ a:hover {
   overflow: auto;
   white-space: nowrap;
   -ms-overflow-style: none; 
-  scrollbar-width: none; 
 }
 
 .liveScoring::-webkit-scrollbar {
