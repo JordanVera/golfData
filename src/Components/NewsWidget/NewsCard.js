@@ -24,7 +24,7 @@ export default function NewsCard({ news, loading }) {
             />
             <Carousel.Caption>
               <div className="imgOverlay">
-                <a href={article.url} target="_blank">
+                <a href={article.url} target="_blank" rel="noreferrer">
                   <h5>{article.title}</h5>
                   <p className="blue">{article.publishedAt}</p>
                 </a>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
 import PlayerRadarChart from '../PlayerRadarChart.js';
 import SpinnerCustom from '../Spinner.js';
+import { Link } from 'react-router-dom';
 
 export default function PlayerProfilePage({ player, loading }) {
   console.log('player', player);
@@ -58,8 +59,8 @@ export default function PlayerProfilePage({ player, loading }) {
                 Our skill profiles, displayed as radar plots, show the number of
                 standard deviations better or worse a player is in each skill
                 relative to the PGA Tour average. See our{' '}
-                <a href="/aboutUs">about us</a> page to learn more about how to
-                read the radar charts displayed throughout the site.
+                <Link to="/aboutUs">about us</Link> page to learn more about how
+                to read the radar charts displayed throughout the site.
               </p>
             </Card.Body>
           </Card>

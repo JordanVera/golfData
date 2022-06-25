@@ -30,6 +30,7 @@ export default function ContactedUsPage() {
               >
                 <iframe
                   src="https://giphy.com/embed/662ZysJEmtjY4QB5q7"
+                  title="iframe"
                   width="100%"
                   height="100%"
                   style={{ position: 'absolute' }}

@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AboutUs from './Components/AboutUsPage/AboutUsPage.js';
 import ContactedUs from './Components/ContactedUsPage/ContactedUsPage.js';
 import PlayerProfile from './PlayerProfile.js';
+import NotFound from './NotFound.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -15,7 +16,7 @@ ReactDOM.render(
       <Route path="/aboutUs" element={<AboutUs />} />
       <Route path="/players/:playerId" element={<PlayerProfile />} />
       <Route path="/contactedUs" element={<ContactedUs />} />
-      {/* <Route path="invoices" element={<Invoices />} /> */}
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')

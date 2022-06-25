@@ -3,10 +3,10 @@ import { Container } from 'react-bootstrap';
 import Header from './Components/Header.js';
 import Footer from './Components/Footer.js';
 import PlayerProfilePage from './Components/PlayerProfile/PlayerProfilePage.js';
-import { useParams, useResolvedPath } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { url } from './config.js';
 
-const PlayerProfile = ({}) => {
+const PlayerProfile = () => {
   const params = useParams();
   const [loading, setLoading] = useState(true);
   const [player, setPlayer] = useState({});

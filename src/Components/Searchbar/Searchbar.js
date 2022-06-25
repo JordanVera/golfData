@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Searchbar({ data, placeholder }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -65,9 +65,9 @@ export default function Searchbar({ data, placeholder }) {
           <div className="dataResult">
             {filteredData.map((golfer, key) => {
               return (
-                <NavLink className="dataItem" to={`/players/${golfer.dg_id}`}>
+                <Link className="dataItem" to={`/players/${golfer.dg_id}`}>
                   <p>{golfer.player_name.split(',').reverse().join(' ')}</p>
-                </NavLink>
+                </Link>
               );
             })}
           </div>

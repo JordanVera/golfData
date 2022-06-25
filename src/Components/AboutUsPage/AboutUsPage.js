@@ -17,7 +17,7 @@ export default function AboutUsPage() {
               to help golf fans analyze PGA players' performances and make
               predictions on upcoming events. PGA Alpha is my first ever solo
               project built using{' '}
-              <a href="https://reactjs.org/" target="_blank">
+              <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
                 Reactjs
               </a>
               . If you notice any bugs or errors in the project, please{' '}
@@ -27,7 +27,7 @@ export default function AboutUsPage() {
               . I will be sure to award you in some way! PGA Alpha relies on
               many external APIs to gain access to PGA and other golf data, the
               main one being{' '}
-              <a href="https://datagolf.com/" target="_blank">
+              <a href="https://datagolf.com/" target="_blank" rel="noreferrer">
                 datagolf.com
               </a>
               .
