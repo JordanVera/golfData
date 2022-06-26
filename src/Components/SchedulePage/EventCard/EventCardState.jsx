@@ -16,7 +16,7 @@ const EventCardState = () => {
   }, []);
 
   return (
-    <div className="newsWidget">
+    <div>
       <EventCard events={events} loading={loading} />
     </div>
   );

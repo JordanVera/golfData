@@ -8,17 +8,10 @@ export default function EventCard({ events, loading }) {
   ) : (
     <>
       {events.map((golfTournament, i) => {
-        const {
-          course,
-          event_name,
-          start_date,
-          location,
-          lat,
-          long,
-          course_key,
-        } = golfTournament;
+        const { course, event_name, start_date, location, lat, long } =
+          golfTournament;
         return (
-          <Card key={i + 1} className="my-3">
+          <Card key={i + 1} className="my-4">
             <Card.Body>
               <Row>
                 <Col md={6}>

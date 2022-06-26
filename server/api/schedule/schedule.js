@@ -22,6 +22,7 @@ export const seedSchedule = async (req, res) => {
           await client.db('tournaments').dropDatabase();
 
           schedule.forEach(async (event) => {
+            // refactor
             await events.insertOne({
               course: event.course,
               course_key: event.course_key,
@@ -29,6 +30,7 @@ export const seedSchedule = async (req, res) => {
               event_name: event.event_name,
               location: event.location,
               start_date: event.start_date,
+              formatted_date: new Date(event.start_date),
               lat: event.latitude,
               long: event.longitude,
             });
@@ -59,7 +61,8 @@ export const getSchedule = async (req, res) => {
     client
       .db('tournaments')
       .collection('events')
-      .find({})
+      .find({ formatted_date: { $gte: new Date() } })
+      .sort({ formatted_date: 1 })
       .toArray(function (err, result) {
         if (err) throw err;
         return res.json(result);
