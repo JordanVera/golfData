@@ -8,8 +8,7 @@ export default function AboutUsPage() {
     <>
       <Header />
       <Container>
-        <Row>
-          <h1 className="my-4 text-center">About Us</h1>
+        <Row style={{ marginTop: '24px' }}>
           <Col md={8}>
             <h2>What is PGA Alpha and why use it?</h2>
             <p>
