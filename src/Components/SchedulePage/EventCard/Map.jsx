@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-import SpinnerCustom from '../../Spinner';
-// import dotenv from 'dotenv';
-// dotenv.config();
+import SpinnerCustom from '../../Spinner.js';
+
 export default function Map({ latitude, longitude }) {
   const center = useMemo(() => ({ lat: latitude, lng: longitude }), []);
 

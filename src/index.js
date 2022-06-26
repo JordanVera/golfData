@@ -11,6 +11,7 @@ import NotFound from './NotFound.js';
 import Schedule from './pages/Schedule.js';
 import { createRoot } from 'react-dom/client';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
