@@ -11,8 +11,6 @@ export default function Map({ latitude, longitude }) {
     googleMapsApiKey: GOOGLE_MAPS_KEY,
   });
 
-  console.log('GOOOGLE API KEY', process.env.REACT_APP_GOOGLE_MAPS_KEY);
-
   return !isLoaded ? (
     <SpinnerCustom />
   ) : (
