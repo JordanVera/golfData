@@ -10,9 +10,9 @@ export default function NewsCard({ news, loading }) {
     <SpinnerCustom />
   ) : (
     <Carousel>
-      {news?.articles?.map((article) => {
+      {news?.articles?.map((article, i) => {
         return (
-          <Carousel.Item interval={5000}>
+          <Carousel.Item interval={5000} key={i + 1}>
             <img
               className="newsBackgroundImg"
               src={article.image}

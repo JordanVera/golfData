@@ -1,6 +1,6 @@
 # PGA Alpha
 
-Hi, I'm Jordan Vera, the creator of PGA Alpha. I created PGA Alpha to help golf fans analyze PGA players' performances and make predictions on upcoming events. PGA Alpha is my first ever solo project built using Reactjs. If you notice any bugs or errors in the project, please contact me by email. I will be sure to award you in some way!
+Hi, I'm Jordan Vera, the creator of PGA Alpha. I created PGA Alpha to help golf fans analyze PGA players' performances and make predictions on upcoming events. PGA Alpha is my first ever solo project built using Reactjs. If you notice any bugs or errors in the project, please contact me by email. I will be sure to reward you in some way!
 
 ## Website Link
 

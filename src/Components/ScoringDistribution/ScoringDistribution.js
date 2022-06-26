@@ -23,10 +23,10 @@ export default function ScoringDistribution({
     <Row className="liveScoringOuter">
       <Row className="liveScoring">
         <div style={{ padding: 0 }}>
-          {currentRoundStats.holes.map((item) => {
+          {currentRoundStats.holes.map((item, i) => {
             const { total } = item;
             return (
-              <>
+              <span key={i + 1}>
                 <div className="inline holeNumber bg-light-grey animate__animated animate__fadeIn">
                   <p>{item.hole}</p>
                 </div>
@@ -36,18 +36,20 @@ export default function ScoringDistribution({
                       <p>par: {item.par}</p>
                       <p>yards: {item.yardage}</p>
                       <p>players_thru: {total.players_thru}</p>
-                      <p>avg_score: {total.avg_score.toFixed(2)}</p>
+                      <p>
+                        avg_score: {Math.round(total.avg_score * 100) / 100}
+                      </p>
                     </Col>
                     <Col xs={6}>
                       <p>eagles_or_better: {total.eagles_or_better}</p>
                       <p>birdies: {total.birdies}</p>
                       <p>pars: {total.pars}</p>
                       <p>bogeys: {total.bogeys}</p>
-                      <p>doubles_or_worse: {total.doubles_or_worse}</p>
+                      <p>dbles_or_worse: {total.doubles_or_worse}</p>
                     </Col>
                   </Row>
                 </div>
-              </>
+              </span>
             );
           })}
         </div>

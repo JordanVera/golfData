@@ -3,7 +3,6 @@ import { Col, Row, Form, Button } from 'react-bootstrap';
 import { url } from '../config.js';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
 
 export default function ContactForm() {
   const navigate = useNavigate();
@@ -13,24 +12,9 @@ export default function ContactForm() {
     email: '',
     msg: '',
   });
-  const { register, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
 
   const { firstName, lastName, email, msg } = inputs;
-
-  const toastSettingsObj = {
-    position: 'top-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    draggable: true,
-    progress: undefined,
-  };
-
-  function validateEmail(email) {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  }
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -75,7 +59,7 @@ export default function ContactForm() {
                 size="sm"
                 type="text"
                 placeholder="Kanye"
-                required="true"
+                required
                 minLength={3}
               />
             </Form.Group>
@@ -90,7 +74,7 @@ export default function ContactForm() {
                 size="sm"
                 type="text"
                 placeholder="West"
-                required="true"
+                required
                 minLength={3}
               />
             </Form.Group>
@@ -106,7 +90,7 @@ export default function ContactForm() {
               size="sm"
               type="email"
               placeholder="kanyewest@gmail.com"
-              required="true"
+              required
             />
           </Form.Group>
         </Row>
@@ -122,7 +106,7 @@ export default function ContactForm() {
               as="textarea"
               rows={3}
               placeholder="Message to our team."
-              required="true"
+              required
               minLength={10}
             />
           </Form.Group>

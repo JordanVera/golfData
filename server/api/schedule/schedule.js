@@ -34,12 +34,11 @@ export const seedSchedule = async (req, res) => {
             });
           });
 
-          console.log(schedule);
-          // console.log(
-          //   chalk.green({
-          //     msg: 'Succesfully retrieved tournament and event data from datagolf API.',
-          //   })
-          // );
+          console.log(
+            chalk.green({
+              msg: 'Succesfully retrieved tournament and event data from datagolf API.',
+            })
+          );
         } catch (error) {
           console.log(chalk.redBright(error));
         }

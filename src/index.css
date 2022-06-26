@@ -62,6 +62,10 @@ a {
   display: inline-block;
 }
 
+.alignToRight {
+  text-align: right;
+}
+
 .playerProfileCard{
   border: none !important;
   margin-bottom: 24px;
@@ -297,6 +301,15 @@ a:hover {
   font-size: 12px;
   margin: 2px 0;
   color: var(--white);
+}
+
+.badge {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.map-container {
+  height: 240px;
 }
 
 #notfound {
