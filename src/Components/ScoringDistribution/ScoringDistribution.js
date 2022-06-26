@@ -58,7 +58,7 @@ export default function ScoringDistribution({
         Round Number {currentRoundStats.round_num} of {eventName}
       </h4>
       <h4 className="text-center updateTitle animate__animated animate__fadeIn">
-        Last Updated at {time} {amOrPm} on {dateStr}
+        Last Updated at {time} {amOrPm} ET on {dateStr}
       </h4>
     </Row>
   );

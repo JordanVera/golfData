@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ScoringDistributionState from './ScoringDistribution/ScoringDistributionState.js';
 
 const Header = () => {
   return (
@@ -97,6 +98,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <ScoringDistributionState />
     </>
   );
 };
