@@ -79,10 +79,6 @@ a {
   font-size: 12px;
 }
 
-.tableHead {
-  border: none;
-}
-
 .orbit-spinner {
   height: 72px !important;
   width: 72px !important;
@@ -116,7 +112,9 @@ a {
   border: none;
 }
 
-.navbar-brand {
+.navbar-brand,
+.tableHead,
+.navbar-brand  {
   border: none;
 }
 
@@ -133,7 +131,6 @@ a {
 .pageCounter {
   margin: 0 22px
 }
-
 
 .newsWidget {
   margin: 24px 0;
@@ -210,7 +207,8 @@ input:focus {
   overflow-y: auto;
 }
 
-.dataResult::-webkit-scrollbar {
+.dataResult::-webkit-scrollbar,
+.liveScoring::-webkit-scrollbar {
   display: none !important;
 }
 
@@ -252,13 +250,8 @@ a:hover {
   -ms-overflow-style: none; 
 }
 
-.liveScoring::-webkit-scrollbar {
-  display: none;
-}
-
 .holeNumber {
   padding-top: 44px !important;
-  /* border: 1px solid var(--green); */
   background: var(--green);
 }
 
@@ -399,16 +392,23 @@ a:hover {
     .notfound .notfound-404 h2 {
         font-size: 24px;
     }
+
+    .nav-link {
+      text-align: center !important;
+    }
+
+    .tournamentCard p,
+    .tournamentCard .h5 {
+      text-align: left;
+    }
+
+    .tournamentCard .h5 {
+      margin-bottom: 12px;
+    }
 }
 
 @media only screen and (max-width: 480px) {
   .notfound .notfound-404 h1 {
       font-size: 182px;
-  }
-}
-
-@media only screen and (max-width : 768px) {
-  .nav-link {
-    text-align: center;
   }
 }

@@ -11,28 +11,34 @@ export default function EventCard({ events, loading }) {
         const { course, event_name, start_date, location, lat, long } =
           golfTournament;
         return (
-          <Card key={i + 1} className="my-4">
+          <Card key={i + 1} className="my-4 tournamentCard">
             <Card.Body>
               <Row>
                 <Col md={6}>
                   <Card.Title>
-                    {event_name}
                     <Badge className="badge" pill bg="success">
-                      Event Name
+                      Event
                     </Badge>
+                    {event_name}
                   </Card.Title>
-                  <p>
-                    <strong>Start Date:</strong> {start_date}
-                  </p>
                 </Col>
-                <Col md={6}>
-                  <Card.Title className="alignToRight">
+                <Col md={6} className="alignToRight">
+                  <Card.Title>
                     <Badge className="badge" pill bg="success">
                       Course
                     </Badge>
                     {course}
                   </Card.Title>
-                  <p className="alignToRight">
+                </Col>
+              </Row>
+              <Row>
+                <Col md={6}>
+                  <p>
+                    <strong>Start Date:</strong> {start_date}
+                  </p>
+                </Col>
+                <Col md={6} className="alignToRight">
+                  <p>
                     <strong>Location:</strong> {location}
                   </p>
                 </Col>
