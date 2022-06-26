@@ -17,7 +17,6 @@ const NewsWidget = (props) => {
 
   return (
     <div className="newsWidget">
-      <h3 className="text-center">Latest PGA News</h3>
       <NewsCard news={news} loading={loading} />
     </div>
   );

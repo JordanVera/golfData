@@ -12,7 +12,7 @@ export default function NewsCard({ news, loading }) {
     <Carousel>
       {news?.articles?.map((article) => {
         return (
-          <Carousel.Item>
+          <Carousel.Item interval={5000}>
             <img
               className="newsBackgroundImg"
               src={article.image}

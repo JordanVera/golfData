@@ -4,6 +4,7 @@ import LeaderBoards from './Components/LeaderBoards.js';
 import Sidebar from './Components/Sidebar.js';
 import Footer from './Components/Footer.js';
 import ScoringDistributionState from './Components/ScoringDistribution/ScoringDistributionState.js';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -20,6 +21,18 @@ function App() {
           </Col>
         </Row>
       </Container>
+      <ToastContainer
+        position="top-right"
+        theme="colored"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Footer />
     </>
   );

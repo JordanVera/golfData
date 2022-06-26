@@ -178,7 +178,7 @@ export default function TopTenCard({ event, loading }) {
           </select>
         </div>
         <Card.Text className="text-center">
-          Draft Kings odds to win {event.event_name}
+          Draft Kings odds to place top 10 at {event.event_name}
         </Card.Text>
         <Card.Link className="text-center">Bet on Odds</Card.Link>
       </Card.Body>

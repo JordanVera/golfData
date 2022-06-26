@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Col, Row, Form, Button } from 'react-bootstrap';
 import { url } from '../config.js';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 export default function ContactForm() {
   const navigate = useNavigate();
@@ -11,8 +13,24 @@ export default function ContactForm() {
     email: '',
     msg: '',
   });
+  const { register, handleSubmit } = useForm();
 
   const { firstName, lastName, email, msg } = inputs;
+
+  const toastSettingsObj = {
+    position: 'top-right',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    draggable: true,
+    progress: undefined,
+  };
+
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -22,8 +40,7 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
     fetch(`${url}/submitForm`, {
       method: 'POST',
       headers: {
@@ -46,7 +63,7 @@ export default function ContactForm() {
   return (
     <div id="contactForm" className="animate__animated animate__fadeIn">
       <h3 className="text-center white">Contact PGA Alpha</h3>
-      <Form>
+      <form id="contactForm" onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <Col xs={6}>
             <Form.Group className="mb-2">
@@ -58,6 +75,8 @@ export default function ContactForm() {
                 size="sm"
                 type="text"
                 placeholder="Kanye"
+                required="true"
+                minLength={3}
               />
             </Form.Group>
           </Col>
@@ -71,6 +90,8 @@ export default function ContactForm() {
                 size="sm"
                 type="text"
                 placeholder="West"
+                required="true"
+                minLength={3}
               />
             </Form.Group>
           </Col>
@@ -85,6 +106,7 @@ export default function ContactForm() {
               size="sm"
               type="email"
               placeholder="kanyewest@gmail.com"
+              required="true"
             />
           </Form.Group>
         </Row>
@@ -100,6 +122,8 @@ export default function ContactForm() {
               as="textarea"
               rows={3}
               placeholder="Message to our team."
+              required="true"
+              minLength={10}
             />
           </Form.Group>
         </Row>
@@ -108,11 +132,10 @@ export default function ContactForm() {
           variant="success"
           size="sm"
           type="submit"
-          onClick={handleSubmit}
         >
           Submit
         </Button>
-      </Form>
+      </form>
     </div>
   );
 }
