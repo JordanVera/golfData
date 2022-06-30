@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import EventCard from './EventCard.jsx';
 import { url } from '../../../config.js';
 
-const EventCardState = () => {
+const SchedulePage = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -22,4 +22,4 @@ const EventCardState = () => {
   );
 };
 
-export default EventCardState;
+export default SchedulePage;

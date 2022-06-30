@@ -109,14 +109,14 @@ a {
   height: 100%;
 }
 
+.profileNameData {
+  margin-left: 24px;
+}
+
 .playerRadarChart {
   height: 340px !important;
   width: 340px !important;
   margin: 0 auto;
-}
-
-.profileNameData {
-  margin-left: 24px;
 }
 
 .navbar {

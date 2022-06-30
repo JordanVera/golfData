@@ -35,39 +35,33 @@ export default function PlayerProfilePage({ player, loading }) {
   ) : (
     <>
       <Card className="my-4">
-        <Row className="px-2 mx-1">
-          <Col>
-            <Row className="my-4">
-              <Col xs={3}>
-                <img
-                  className="profilePlayerImage"
-                  src={PhotoUrl}
-                  alt="profilePlayerImage"
-                />
-              </Col>
-              <Col xs={9}>
-                <div className="profileNameData">
-                  <h5>
-                    <Image
-                      src={`/images/flags/${country}.png`}
-                      className="countryFlag"
-                    />
-                    {player_name.split(',').reverse('').join(' ')}
-                  </h5>
-                  <h6>
-                    <Badge bg="success" className="mx-0">
-                      Rank: {owgr_rank}
-                    </Badge>
-                  </h6>
-                  <h6 className="smallHeader">Swings: {Swings}</h6>
-                  <h6 className="smallHeader">Weight: {Weight}</h6>
-                  <h6 className="smallHeader">PGA Debut: {PgaDebut}</h6>
-                </div>
-              </Col>
-            </Row>
+        <Row className="px-2 my-4 mx-1">
+          <Col lg={1} md={2} sm={3} xs={3}>
+            <img
+              className="profilePlayerImage"
+              src={PhotoUrl}
+              alt="profilePlayerImage"
+            />
           </Col>
-          <Col md={4}></Col>
-          <Col md={4}></Col>
+          <Col lg={11} md={10} sm={9} xs={9}>
+            <div className="profileNameData">
+              <h5>
+                <Image
+                  src={`/images/flags/${country}.png`}
+                  className="countryFlag"
+                />
+                {player_name.split(',').reverse('').join(' ')}
+              </h5>
+              <h6>
+                <Badge bg="success" className="mx-0">
+                  Rank: {owgr_rank}
+                </Badge>
+              </h6>
+              <h6 className="smallHeader">Swings: {Swings}</h6>
+              <h6 className="smallHeader">Weight: {Weight}</h6>
+              <h6 className="smallHeader">PGA Debut: {PgaDebut}</h6>
+            </div>
+          </Col>
         </Row>
       </Card>
       <Row className="my-4">
@@ -94,22 +88,21 @@ export default function PlayerProfilePage({ player, loading }) {
           <Card className="playerProfileCard">
             <Card.Body>
               <Row>
-                <Col md={4}>
-                  <div className="text-center">
+                <Col lg={4}>
+                  <div className="text-center my-4">
                     <h5>Primary Tour</h5> {primary_tour}
                   </div>
                 </Col>
-                <Col md={4}>
-                  <div className="text-center">
+                <Col lg={4}>
+                  <div className="text-center my-4">
                     <h5>OWGR Rank </h5> {owgr_rank}
-                    {/* {new Date(BirthDate).toLocaleDateString()} */}
                   </div>
                 </Col>
-                <Col md={4}>
-                  <div className="text-center">
+                <Col lg={4}>
+                  <div className="text-center my-4">
                     <h5>PGA Alpha Rank </h5> {datagolf_rank}
-                    {/* {new Date(BirthDate).toLocaleDateString()} */}
                   </div>
+                  {/* {new Date(BirthDate).toLocaleDateString()} */}
                   {/* <p>
                     <strong>Driving Accuracy:</strong> {stats.driving_acc}
                   </p>
