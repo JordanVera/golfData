@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TableMain from './Table.js';
-import PlayerModal from './PlayerModal.js';
+import PlayerModal from './Player/PlayerModal.js';
 import Searchbar from './Searchbar/Searchbar.js';
 import { url } from '../config.js';
 

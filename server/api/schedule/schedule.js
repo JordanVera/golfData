@@ -22,14 +22,22 @@ export const seedSchedule = async (req, res) => {
           await client.db('tournaments').dropDatabase();
 
           schedule.forEach(async (event) => {
-            // refactor
+            const {
+              course,
+              course_key,
+              event_id,
+              event_name,
+              location,
+              start_date,
+            } = event;
+
             await events.insertOne({
-              course: event.course,
-              course_key: event.course_key,
-              event_id: event.event_id,
-              event_name: event.event_name,
-              location: event.location,
-              start_date: event.start_date,
+              course,
+              course_key,
+              event_id,
+              event_name,
+              location,
+              start_date,
               formatted_date: new Date(event.start_date),
               lat: event.latitude,
               long: event.longitude,

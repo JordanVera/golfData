@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Table, Row, Col, Button } from 'react-bootstrap';
-import SpinnerCustom from '../Spinner.js';
+import SpinnerCustom from '../../Spinner.js';
 import classNames from 'classnames';
 import { useTable, useSortBy, usePagination } from 'react-table';
 

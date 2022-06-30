@@ -60,7 +60,7 @@ export default function PlayerRadarChart({ player }) {
   };
 
   const white = '#fff';
-  const grey = '#222';
+  const grey = 'rgba(0,0,0, .3)';
   const options = {
     scales: {
       r: {
@@ -87,5 +87,5 @@ export default function PlayerRadarChart({ player }) {
     },
   };
 
-  return <Radar options={options} data={data} />;
+  return <Radar className="playerRadarChart" options={options} data={data} />;
 }

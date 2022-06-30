@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import SpinnerCustom from '../Spinner.js';
+import SpinnerCustom from '../../Spinner.js'
 
 export default function NewsCard({ news, loading }) {
   console.log('%cnews', 'color: red; font-size: 20px;');

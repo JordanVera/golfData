@@ -6,11 +6,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const seedPlayers = async (req, res) => {
-  const axiosrequest1 = axios.get(
+  const getPlayers = axios.get(
     `https://feeds.datagolf.com/preds/get-dg-rankings?&key=${process.env.DATAGOLF_KEY}`
   );
-  const axiosrequest2 = axios.get(
+  const getPlayerStats = axios.get(
     `https://feeds.datagolf.com/preds/skill-ratings?display=value&key=${process.env.DATAGOLF_KEY}`
+  );
+  const getFantasyData = axios.get(
+    `https://api.sportsdata.io/api/golf/json/Players?key=${process.env.FANTASYDATA_KEY}`
   );
 
   const client = new MongoClient(process.env.MONGODB_URI);
@@ -18,10 +21,13 @@ export const seedPlayers = async (req, res) => {
   const golfers = client.db('golf').collection('golfers');
 
   try {
-    await axios.all([axiosrequest1, axiosrequest2]).then(
-      axios.spread(async (res1, res2) => {
+    await axios.all([getPlayers, getPlayerStats, getFantasyData]).then(
+      axios.spread(async (res1, res2, res3) => {
         const players = res1.data.rankings;
         const stats = res2.data.players;
+        const fantasyData = res3.data;
+
+        console.log('fantasyData', fantasyData);
 
         await client.db('golf').dropDatabase();
 
@@ -29,7 +35,18 @@ export const seedPlayers = async (req, res) => {
           const strokesGained = stats.find(
             (element) => element.dg_id === subject.dg_id
           );
-          const player = { ...subject, stats: { ...strokesGained } };
+
+          const filteredFantasyData = fantasyData.find(
+            (element) =>
+              `${element.LastName}, ${element.FirstName}` ===
+              subject.player_name
+          );
+
+          const player = {
+            ...subject,
+            stats: { ...strokesGained },
+            fantasyData: { ...filteredFantasyData },
+          };
 
           golfers.insertOne(player);
           return player;

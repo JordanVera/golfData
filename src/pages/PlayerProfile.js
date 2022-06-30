@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import Header from './Components/Header.js';
-import Footer from './Components/Footer.js';
-import PlayerProfilePage from './Components/PlayerProfile/PlayerProfilePage.js';
+import Header from '../Components/Header.js';
+import Footer from '../Components/Footer.js';
+import PlayerProfilePage from '../Components/Player/PlayerProfile/PlayerProfilePage.jsx';
 import { useParams } from 'react-router-dom';
-import { url } from './config.js';
+import { url } from '../config.js';
 
 const PlayerProfile = () => {
   const params = useParams();

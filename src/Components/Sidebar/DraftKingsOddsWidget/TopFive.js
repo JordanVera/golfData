@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import LiveOddsCard from './LiveOddsCard.js';
-import { url } from '../../config.js';
+import TopFiveCard from './TopFiveCard.js';
+import { url } from '../../../config.js';
 
-const LiveOdds = (props) => {
+const TopFive = (props) => {
   const [event, setEvent] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${url}/liveOdds`)
+    fetch(`${url}/top_5`)
       .then((res) => res.json())
       .then((json) => {
         setEvent(json);
@@ -15,7 +15,7 @@ const LiveOdds = (props) => {
       });
   }, []);
 
-  return <LiveOddsCard event={event} loading={loading} />;
+  return <TopFiveCard event={event} loading={loading} />;
 };
 
-export default LiveOdds;
+export default TopFive;

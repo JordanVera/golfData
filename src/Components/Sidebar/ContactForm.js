@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Col, Row, Form, Button } from 'react-bootstrap';
-import { url } from '../config.js';
+import { url } from '../../config.js';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 

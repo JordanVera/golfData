@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import Header from '../Header.js';
-import Sidebar from '../Sidebar.js';
+import Sidebar from '../Sidebar/Sidebar.js';
 
 export default function AboutUsPage() {
   return (
@@ -54,6 +54,41 @@ export default function AboutUsPage() {
               mean (i.e. if you are 3 SD above the mean in distance, you are one
               of the longest players on Tour). For more intuition on standard
               deviation, take a look at this Wikipedia entry.{' '}
+            </p>
+            <h2>
+              What are the main sources of differences between PGA Alphas
+              strokes-gained numbers and the PGA Tour's?
+            </h2>
+            <p>
+              We've tried to follow the PGA Tour's methods for calculating
+              strokes-gained as closely as possible, but inevitably there will
+              be differences given we don't know exactly what their process is.
+              Here are a few of the common sources of disagreement: 1) labelling
+              "recovery" shots. The expected strokes to hole out changes
+              substantially if a shot is deemed to be hit from a recovery
+              position (see p.15 of Mark Broadie's paper). Labelling a shot as a
+              recovery will have the effect of decreasing the previous shot's SG
+              and increasing the SG of the current shot. This is commonly the
+              source of discrepancies in SG:OTT and SG:APP; 2) Labelling shots
+              as "Around-the-Green" versus "Approach-the-Green". Our method is
+              simple: all shots within 50 yards from the pin are labelled as
+              ARG; the PGA Tour's method (I believe) is more complicated. This
+              is commonly a source of discrepancies in SG:ARG and SG:APP between
+              DG and the PGA Tour; 3) We subtract the mean SG by category-hole,
+              whereas the PGA Tour only subtracts the mean SG by category-round.
+              We perform this adjustment by hole because we are also providing
+              hole-level SG estimates (read more on this in the next Q&A). If a
+              player doesn't hit a shot in every category on every hole, these
+              two adjustment methods will yield different SG estimates. SG:ARG
+              is the category most commonly affected by this; 4) We make the
+              adjustment mentioned in (3) regardless of how many players have
+              finished a hole (read more below), whereas the PGA Tour only
+              starts making their adjustment later in the round. This will
+              contribute to discrepancies for all categories while a round is
+              ongoing. Overall the correlation between our SG figures and the
+              PGA Tour's is high; for a randomly selected round, SG:OTT, SG:APP,
+              and SG:ARG values typically have a correlation of 0.96-0.98, while
+              SG:PUTT is >0.99.
             </p>
           </Col>
           <Col md={4}>

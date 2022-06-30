@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AboutUs from './Components/AboutUsPage/AboutUsPage.js';
 import ContactedUs from './Components/ContactedUsPage/ContactedUsPage.js';
-import PlayerProfile from './PlayerProfile.js';
+import PlayerProfile from './pages/PlayerProfile.js';
 import NotFound from './NotFound.js';
 import Schedule from './pages/Schedule.js';
 import { createRoot } from 'react-dom/client';

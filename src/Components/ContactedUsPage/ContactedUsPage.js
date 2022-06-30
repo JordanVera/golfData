@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import Header from '../Header.js';
-import Sidebar from '../Sidebar.js';
+import Sidebar from '../Sidebar/Sidebar.js';
 import Footer from '../Footer.js';
 import ParticlesBackground from './ParticlesBackground.js';
 

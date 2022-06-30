@@ -13,6 +13,7 @@
 }
 
 body {
+  background-color: var(--black-base) ;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -71,12 +72,21 @@ a {
   margin-bottom: 24px;
 }
 
+.borderBottom {
+  width: 90%;
+  margin: 24px auto;
+}
+
 .submitButton {
   width: 100%;
 }
 
 .sm-txt {
   font-size: 12px;
+}
+
+.smallHeader {
+  font-size: 13px;
 }
 
 .orbit-spinner {
@@ -93,6 +103,20 @@ a {
 
 .draftKingsLogo {
   width: 68px;
+}
+
+.profilePlayerImage {
+  height: 100%;
+}
+
+.playerRadarChart {
+  height: 340px !important;
+  width: 340px !important;
+  margin: 0 auto;
+}
+
+.profileNameData {
+  margin-left: 24px;
 }
 
 .navbar {
@@ -404,6 +428,10 @@ a:hover {
 
     .tournamentCard .h5 {
       margin-bottom: 12px;
+    }
+
+    .profileNameData {
+      margin-left: 4px;
     }
 }
 

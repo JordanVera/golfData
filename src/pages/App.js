@@ -1,7 +1,7 @@
 import { Container, Col, Row } from 'react-bootstrap';
 import Header from '../Components/Header.js';
 import LeaderBoards from '../Components/LeaderBoards.js';
-import Sidebar from '../Components/Sidebar.js';
+import Sidebar from '../Components/Sidebar/Sidebar.js';
 import Footer from '../Components/Footer.js';
 import { ToastContainer } from 'react-toastify';
 

@@ -2,7 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../Components/Header.js';
 import SchedulePage from '../Components/SchedulePage/SchedulePage.jsx';
 import Footer from '../Components/Footer.js';
-import Sidebar from '../Components/Sidebar.js';
+import Sidebar from '../Components/Sidebar/Sidebar.js';
 
 function Schedule() {
   return (

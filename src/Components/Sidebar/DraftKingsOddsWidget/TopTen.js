@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import TopTenCard from './TopTenCard.js';
-import { url } from '../../config.js';
+import { url } from '../../../config.js';
 
 const TopTen = (props) => {
   const [event, setEvent] = useState({});
