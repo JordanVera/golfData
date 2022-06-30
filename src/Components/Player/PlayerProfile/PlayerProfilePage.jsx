@@ -19,7 +19,16 @@ export default function PlayerProfilePage({ player, loading }) {
     player.fantasyData = {};
   }
 
-  const { Weight, Swings, PgaDebut, BirthDate, PhotoUrl } = player.fantasyData;
+  let { Weight, Swings, PgaDebut, BirthDate, PhotoUrl } = player.fantasyData;
+
+  if (!Weight || !Swings || !PgaDebut || !BirthDate || !PhotoUrl) {
+    Weight = 'N/A';
+    Swings = 'N/A';
+    PgaDebut = 'N/A';
+    BirthDate = 'N/A';
+    PhotoUrl =
+      'https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/golf/low-res/0.png';
+  }
 
   return loading ? (
     <SpinnerCustom />
