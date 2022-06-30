@@ -198,7 +198,7 @@ a {
 }
 
 .search input {
-  height: 25px;
+  height: 32px;
   width: 100%;
   font-size: 12px;
   -webkit-appearance: none;
@@ -215,6 +215,11 @@ a {
   border-bottom-left-radius: 0px;
   background-color: var(--black-base);
   font-weight: normal !important;
+}
+
+.searchIcon {
+  background: #424242;
+  padding: 2px 8px;
 }
 
 input:focus {
@@ -263,10 +268,7 @@ a:hover {
   cursor: pointer;
 }
 
-.searchIcon {
-  background: #424242;
-  padding: 0 6px;
-}
+
 
 .liveScoring {
   overflow: auto;
