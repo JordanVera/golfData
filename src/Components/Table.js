@@ -27,27 +27,50 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
       {
         Header: 'SG APP',
         accessor: 'stats.sg_app',
+        Cell: (props) =>
+          typeof props.cell.row.original.stats.sg_app === 'number'
+            ? props.cell.row.original.stats.sg_app.toFixed(2)
+            : props.cell.row.original.stats.sg_app,
       },
       {
         Header: 'SG ARG',
         accessor: 'stats.sg_arg',
+        Cell: (props) =>
+          typeof props.cell.row.original.stats.sg_arg === 'number'
+            ? props.cell.row.original.stats.sg_arg.toFixed(2)
+            : props.cell.row.original.stats.sg_arg,
       },
       {
         Header: 'SG OTT',
         accessor: 'stats.sg_ott',
+        Cell: (props) =>
+          typeof props.cell.row.original.stats.sg_ott === 'number'
+            ? props.cell.row.original.stats.sg_ott.toFixed(2)
+            : props.cell.row.original.stats.sg_ott,
       },
       {
         Header: 'SG PUTT',
         accessor: 'stats.sg_putt',
+        Cell: (props) =>
+          typeof props.cell.row.original.stats.sg_putt === 'number'
+            ? props.cell.row.original.stats.sg_putt.toFixed(2)
+            : props.cell.row.original.stats.sg_putt,
       },
       {
         Header: 'SG TOTAL',
         accessor: 'stats.sg_total',
+        Cell: (props) =>
+          typeof props.cell.row.original.stats.sg_total === 'number'
+            ? props.cell.row.original.stats.sg_total.toFixed(2)
+            : props.cell.row.original.stats.sg_total,
       },
       {
         Header: 'Skill Estimate',
         accessor: 'dg_skill_estimate',
-        Cell: (props) => props.cell.row.original.dg_skill_estimate.toFixed(3),
+        Cell: (props) =>
+          typeof props.cell.row.original.dg_skill_estimate === 'number'
+            ? props.cell.row.original.dg_skill_estimate.toFixed(2)
+            : props.cell.row.original.dg_skill_estimate,
       },
       {
         Header: 'Stats',
