@@ -331,6 +331,10 @@ a:hover {
   height: 240px;
 }
 
+.scatterMap {
+  height: 300px;
+}
+
 #notfound {
   position: relative;
   height: 100vh;

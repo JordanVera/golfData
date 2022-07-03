@@ -13,7 +13,6 @@ export default function PlayerProfilePage({ player, loading }) {
     player_name,
     primary_tour,
   } = player;
-  const stats = player.stats;
 
   if (typeof player.fantasyData === 'undefined') {
     player.fantasyData = {};

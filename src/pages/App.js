@@ -4,6 +4,7 @@ import LeaderBoards from '../Components/LeaderBoards.js';
 import Sidebar from '../Components/Sidebar/Sidebar.js';
 import Footer from '../Components/Footer.js';
 import { ToastContainer } from 'react-toastify';
+import ScatterMap from '../Components/Map/ScatterMap.jsx';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Row>
           <Col md={8}>
             <LeaderBoards />
+            <ScatterMap />
           </Col>
           <Col md={4}>
             <Sidebar />

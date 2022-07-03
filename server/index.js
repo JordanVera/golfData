@@ -4,7 +4,11 @@ import {
   getPlayers,
   getPlayer,
 } from './api/players/getPlayers.js';
-import { seedSchedule, getSchedule } from './api/schedule/schedule.js';
+import {
+  seedSchedule,
+  getSchedule,
+  getRemainingSchedule,
+} from './api/schedule/schedule.js';
 import liveStrokesGainedData from './api/liveStrokesGained/liveStrokesGained.js';
 import getRecentNews from './api/news/news.js';
 import { getLiveOdds, getTopFive, getTopTen } from './api/liveOdds/liveOdds.js';
@@ -19,6 +23,7 @@ app.get('/tournamentData', getLatestPerformanceData);
 
 app.get('/seedSchedule', seedSchedule);
 app.get('/getSchedule', getSchedule);
+app.get('/getRemainingSchedule', getRemainingSchedule);
 
 app.get('/scoringDistribution', liveStrokesGainedData);
 
