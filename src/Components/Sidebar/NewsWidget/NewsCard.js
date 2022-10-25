@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import SpinnerCustom from '../../Spinner.js'
+import SpinnerCustom from '../../Spinner.js';
 
 export default function NewsCard({ news, loading }) {
   console.log('%cnews', 'color: red; font-size: 20px;');
@@ -25,7 +25,7 @@ export default function NewsCard({ news, loading }) {
             <Carousel.Caption>
               <div className="imgOverlay">
                 <a href={article.url} target="_blank" rel="noreferrer">
-                  <h5>{article.title}</h5>
+                  <h5 className="articleTitle">{article.title}</h5>
                   <p className="blue">{article.publishedAt}</p>
                 </a>
               </div>

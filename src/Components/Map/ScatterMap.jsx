@@ -16,7 +16,7 @@ const ScatterMap = () => {
   }, []);
 
   return (
-    <div className="my-2 text-center">
+    <div className="my-4 text-center">
       <h4>{new Date().getFullYear()} PGA Events</h4>
       <Map events={events} loading={loading} />
     </div>

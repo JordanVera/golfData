@@ -28,7 +28,12 @@ code {
 }
 
 a {
-  text-decoration-color: var(--lightBlue);
+  color: #62c462;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--white) !important;
 }
 
 .blue {
@@ -256,13 +261,6 @@ input:focus {
   margin-left: 10px;
   margin-bottom: 0 !important;
 }
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--green) !important;
-}
 
 #clearBtn {
   cursor: pointer;
@@ -397,6 +395,14 @@ a:hover {
   text-shadow: 0px 2px 0px #8400ff;
   letter-spacing: 13px;
   margin: 0;
+}
+
+.articleTitle {
+  color: var(--white)
+}
+
+.articleTitle:hover {
+  color: var(--green)
 }
 
 .notfound a {
