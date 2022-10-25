@@ -2,25 +2,15 @@ import axios from 'axios';
 
 const liveStrokesGainedData = async (req, res) => {
   try {
-    await axios
-      .get(
-        `https://feeds.datagolf.com/preds/live-hole-stats?tour=pga&key=${process.env.DATAGOLF_KEY}`
-      )
-      .then(async (strokesGainedData) => {
-        try {
-          const strokesGained = strokesGainedData.data;
+    const response = await axios.get(
+      `https://feeds.datagolf.com/preds/live-hole-stats?tour=pga&key=${process.env.DATAGOLF_KEY}`
+    );
 
-          console.log(strokesGained);
+    const strokesGainedData = response.data;
 
-          console.log({
-            msg: 'Succesfully retrieved live strokes gained data from datagolf API.',
-          });
+    console.log(strokesGainedData);
 
-          return res.json(strokesGained);
-        } catch (err) {
-          console.log({ err: err.message });
-        }
-      });
+    return res.json(strokesGainedData);
   } catch (err) {
     console.log({ err: err.message });
   }
