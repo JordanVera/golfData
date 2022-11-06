@@ -8,7 +8,7 @@ const liveStrokesGainedData = async (req, res) => {
 
     const strokesGainedData = response.data;
 
-    console.log(strokesGainedData);
+    // console.log(strokesGainedData);
 
     return res.json(strokesGainedData);
   } catch (err) {

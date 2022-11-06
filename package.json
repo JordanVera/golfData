@@ -48,9 +48,9 @@
   },
   "scripts": {
     "start": "node index.js",
-    "start-dev": "react-scripts start",
+    "dev": "react-scripts start",
     "server": "nodemon index.js",
-    "dev": "concurrently \"npm run server\" \"npm run start-dev\"",
+    "dev-conc": "concurrently \"npm run server\" \"npm run start-dev\"",
     "build": "react-scripts build",
     "heroku-postbuild": "npm run build"
   },

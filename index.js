@@ -21,7 +21,7 @@ app.use(
   })
 );
 
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 
 app.use(bodyparser.json());
 
