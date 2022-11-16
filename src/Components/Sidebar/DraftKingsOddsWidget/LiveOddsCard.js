@@ -51,6 +51,9 @@ export default function LiveOddsCard({ event, loading }) {
     state: { pageIndex, pageSize },
   } = useTable({ columns, data }, useSortBy, usePagination);
 
+  // const date = new Date(event.last_updated);
+  // const formattedDate = `${event.last_updated.getMonth()}/${event.last_updated.getDate()}/${event.last_updated.getFullYear()}`;
+
   return loading ? (
     <SpinnerCustom />
   ) : (
@@ -69,7 +72,8 @@ export default function LiveOddsCard({ event, loading }) {
               <h4 className="orange">{event.event_name}</h4>
             </Card.Title>
             <Card.Subtitle className="mb-2 text-success">
-              Last Updated: {event.last_updated}
+              Last Updated:{' '}
+              {event.last_updated.substring(0, event.last_updated.length - 7)}
             </Card.Subtitle>
           </Col>
         </Row>

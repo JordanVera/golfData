@@ -9,18 +9,16 @@ const Leaderboard = (props) => {
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch(`${url}/getPlayers`)
-      .then((res) => res.json())
-      .then((leaderboard) => {
-        setPlayers(leaderboard, (_) => {
-          console.log(
-            `Leaderboard Fetched: ${JSON.stringify(leaderboard)}`,
-            leaderboard
-          );
-        });
-        setLoading(false);
-      });
+  useEffect((_) => {
+    const fetchPlayers = async (_) => {
+      const res = await fetch(`${url}/getPlayers`);
+      const leaderboard = await res.json();
+
+      setPlayers(leaderboard);
+      setLoading(false);
+    };
+
+    fetchPlayers();
   }, []);
 
   return (

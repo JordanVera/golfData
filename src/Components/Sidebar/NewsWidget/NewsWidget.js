@@ -6,13 +6,16 @@ const NewsWidget = (props) => {
   const [news, setNews] = useState({});
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch(`${url}/recentNews`)
-      .then((res) => res.json())
-      .then((json) => {
-        setNews(json);
-        setLoading(false);
-      });
+  useEffect((_) => {
+    const fetchNews = async (_) => {
+      const res = await fetch(`${url}/recentNews`);
+      const json = await res.json();
+
+      setNews(json);
+      setLoading(false);
+    };
+
+    fetchNews();
   }, []);
 
   return (

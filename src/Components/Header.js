@@ -36,6 +36,10 @@ const Header = () => {
               <Link className="nav-link" to="/schedule">
                 Schedule
               </Link>
+
+              <Link className="nav-link" to="/predictions">
+                Predictions
+              </Link>
             </Nav>
             <Nav>
               <Row>

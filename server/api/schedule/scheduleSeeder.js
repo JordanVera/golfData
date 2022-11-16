@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import { MongoClient } from 'mongodb';
+import Schedule from './ScheduleModel.js';
 
 dotenv.config();
 
@@ -11,19 +12,15 @@ export const seedSchedule = async (_) => {
       `https://feeds.datagolf.com/get-schedule?&key=${process.env.DATAGOLF_KEY}`
     );
 
-    const client = new MongoClient(process.env.MONGODB_URI);
-    await client.connect();
-    const events = client.db('tournaments').collection('events');
-
     const schedule = response.data.schedule;
 
-    await client.db('tournaments').dropDatabase();
+    await Schedule.deleteMany();
 
     schedule.forEach(async (event) => {
       const { course, course_key, event_id, event_name, location, start_date } =
         event;
 
-      await events.insertOne({
+      await Schedule.create({
         course,
         course_key,
         event_id,
@@ -37,7 +34,7 @@ export const seedSchedule = async (_) => {
     });
 
     console.log(
-      'Succesfully retrieved tournament and event data from datagolf API.'
+      'Succesfully retrieved tournament and event data from datagolf API and seeded db'
     );
   } catch (error) {
     console.log(chalk.redBright(error.message));

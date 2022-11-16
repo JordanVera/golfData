@@ -69,7 +69,8 @@ export default function TopFiveCard({ event, loading }) {
               <h4 className="orange">{event.event_name}</h4>
             </Card.Title>
             <Card.Subtitle className="mb-2 text-success">
-              Last Updated: {event.last_updated}
+              Last Updated:{' '}
+              {event.last_updated.substring(0, event.last_updated.length - 7)}
             </Card.Subtitle>
           </Col>
         </Row>

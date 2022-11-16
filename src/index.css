@@ -106,6 +106,10 @@ a:hover {
   margin-bottom: 24px;
 }
 
+#toggleButtonGroup h6{ 
+  margin-bottom: 0 !important;
+}
+
 .draftKingsLogo {
   width: 68px;
 }
@@ -197,6 +201,12 @@ a:hover {
 #contactForm form {
   margin-top: 0;
 }
+
+
+/* .strokesGainedCategoryAdjustmenGraph {
+  height: 40px !important;
+} */
+
 
 .searchInputs {
   display: flex;
@@ -403,6 +413,10 @@ input:focus {
 
 .articleTitle:hover {
   color: var(--green)
+}
+
+.sgCats {
+  width: 200px;
 }
 
 .notfound a {

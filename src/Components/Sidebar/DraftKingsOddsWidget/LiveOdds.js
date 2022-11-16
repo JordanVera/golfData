@@ -6,13 +6,16 @@ const LiveOdds = (props) => {
   const [event, setEvent] = useState({});
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch(`${url}/liveOdds`)
-      .then((res) => res.json())
-      .then((json) => {
-        setEvent(json);
-        setLoading(false);
-      });
+  useEffect((_) => {
+    const fetchLiveOdds = async (_) => {
+      const res = await fetch(`${url}/liveOdds`);
+      const json = await res.json();
+
+      setEvent(json);
+      setLoading(false);
+    };
+
+    fetchLiveOdds();
   }, []);
 
   return <LiveOddsCard event={event} loading={loading} />;

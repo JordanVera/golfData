@@ -9,18 +9,21 @@ export default function ScoringDistributionState() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${url}/scoringDistribution`)
-      .then((res) => res.json())
-      .then((tournamentData) => {
-        setCurrentRoundStats(
-          tournamentData.courses[0].rounds.find((round, i) => {
-            return round.round_num === tournamentData.current_round;
-          })
-        );
-        setEventName(tournamentData.event_name);
-        setLastUpdate(tournamentData.last_update);
-        setLoading(false);
-      });
+    const fetchScoringDistributionData = async (_) => {
+      const res = await fetch(`${url}/scoringDistribution`);
+      const tournamentData = await res.json();
+
+      setCurrentRoundStats(
+        tournamentData.courses[0].rounds.find((round, i) => {
+          return round.round_num === tournamentData.current_round;
+        })
+      );
+      setEventName(tournamentData.event_name);
+      setLastUpdate(tournamentData.last_update);
+      setLoading(false);
+    };
+
+    fetchScoringDistributionData();
   }, []);
 
   return (

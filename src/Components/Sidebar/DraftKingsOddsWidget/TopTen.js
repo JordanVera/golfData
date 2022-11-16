@@ -7,12 +7,15 @@ const TopTen = (props) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${url}/top_10`)
-      .then((res) => res.json())
-      .then((json) => {
-        setEvent(json);
-        setLoading(false);
-      });
+    const fetchTopTen = async (_) => {
+      const res = await fetch(`${url}/top_10`);
+      const json = await res.json();
+
+      setEvent(json);
+      setLoading(false);
+    };
+
+    fetchTopTen();
   }, []);
 
   return <TopTenCard event={event} loading={loading} />;

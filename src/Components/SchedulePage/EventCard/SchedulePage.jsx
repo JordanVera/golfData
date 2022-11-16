@@ -7,12 +7,15 @@ const SchedulePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${url}/getRemainingSchedule`)
-      .then((res) => res.json())
-      .then((json) => {
-        setEvents(json);
-        setLoading(false);
-      });
+    const fetchSchedule = async (_) => {
+      const res = await fetch(`${url}/getSchedule`);
+      const json = await res.json();
+
+      setEvents(json);
+      setLoading(false);
+    };
+
+    fetchSchedule();
   }, []);
 
   return (
