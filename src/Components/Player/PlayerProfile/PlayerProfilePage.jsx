@@ -5,14 +5,8 @@ import SpinnerCustom from '../../Spinner.js';
 import { Link } from 'react-router-dom';
 
 export default function PlayerProfilePage({ player, loading }) {
-  const {
-    owgr_rank,
-    datagolf_rank,
-    dg_skill_estimate,
-    country,
-    player_name,
-    primary_tour,
-  } = player;
+  const { owgr_rank, datagolf_rank, country, player_name, primary_tour } =
+    player;
 
   if (typeof player.fantasyData === 'undefined') {
     player.fantasyData = {};

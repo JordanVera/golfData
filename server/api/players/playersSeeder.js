@@ -61,7 +61,6 @@ export const seedPlayers = async (_) => {
           delete player.stats.player_name;
           delete player.fantasyData.FirstName;
           delete player.fantasyData.LastName;
-          delete player.fantasyData.PlayerID;
           delete player.fantasyData.Country;
           delete player.fantasyData.DraftKingsName;
           delete player.fantasyData.DraftKingsPlayerID;

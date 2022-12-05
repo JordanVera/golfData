@@ -4,7 +4,6 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import TableSwitch from './Table.jsx';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
-import Button from 'react-bootstrap/Button';
 
 function PredictionsToggle({
   baselineData,
@@ -53,7 +52,7 @@ function PredictionsToggle({
         name="options"
         onChange={handleChange}
       >
-        <ToggleButton id="tbg-radio-1" value="baseline">
+        <ToggleButton id="tbg-radio-1" value="baseline" active="true">
           <OverlayTrigger
             trigger="hover"
             placement="bottom"

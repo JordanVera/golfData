@@ -102,9 +102,7 @@ export default function TableMain({ players, setSelectedPlayer, loading }) {
   } = useTable({ columns, data }, useSortBy, usePagination);
 
   useEffect(() => {
-    setPageSize(25, (_) => {
-      console.log(`page deafult set to 25`);
-    });
+    setPageSize(50);
   }, []);
   return loading ? (
     <SpinnerCustom />
