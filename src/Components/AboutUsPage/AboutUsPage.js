@@ -12,10 +12,10 @@ export default function AboutUsPage() {
           <Col md={8}>
             <h2>What is PGA Alpha and why use it?</h2>
             <p>
-              Hi, I'm <a href="https://tranquil-castle-40340.herokuapp.com/">Jordan Vera</a>, the creator of PGA Alpha. I created PGA Alpha
-              to help golf fans analyze PGA players' performances and make
-              predictions on upcoming events. PGA Alpha is my first ever solo
-              project built using{' '}
+              Hi, I'm <a href="https://www.jordanvera.com">Jordan Vera</a>, the
+              creator of PGA Alpha. I created PGA Alpha to help golf fans
+              analyze PGA players' performances and make predictions on upcoming
+              events. PGA Alpha is my first ever solo project built using{' '}
               <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
                 Reactjs
               </a>
